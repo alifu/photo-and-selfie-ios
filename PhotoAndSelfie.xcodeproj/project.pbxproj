@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		82464CF027F348AD00123A2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82464CEF27F348AD00123A2C /* AppDelegate.swift */; };
-		82464CF227F348AD00123A2C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82464CF127F348AD00123A2C /* SceneDelegate.swift */; };
-		82464CF427F348AD00123A2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82464CF327F348AD00123A2C /* ViewController.swift */; };
 		82464CF727F348AD00123A2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82464CF527F348AD00123A2C /* Main.storyboard */; };
 		82464CF927F348AF00123A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82464CF827F348AF00123A2C /* Assets.xcassets */; };
 		82464CFC27F348AF00123A2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82464CFA27F348AF00123A2C /* LaunchScreen.storyboard */; };
+		82464D0527F34CF500123A2C /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82464D0427F34CF500123A2C /* ParentViewController.swift */; };
+		82464D0727F34D0500123A2C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82464D0627F34D0500123A2C /* PhotoViewController.swift */; };
+		82464D0927F34D1200123A2C /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82464D0827F34D1200123A2C /* SelfieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		82464CEC27F348AD00123A2C /* PhotoAndSelfie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAndSelfie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82464CEF27F348AD00123A2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		82464CF127F348AD00123A2C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		82464CF327F348AD00123A2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		82464CF627F348AD00123A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82464CF827F348AF00123A2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82464CFB27F348AF00123A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82464CFD27F348AF00123A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82464D0427F34CF500123A2C /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		82464D0627F34D0500123A2C /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		82464D0827F34D1200123A2C /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,24 @@
 		82464CEE27F348AD00123A2C /* PhotoAndSelfie */ = {
 			isa = PBXGroup;
 			children = (
+				82464D0327F34CDA00123A2C /* Controller */,
 				82464CEF27F348AD00123A2C /* AppDelegate.swift */,
-				82464CF127F348AD00123A2C /* SceneDelegate.swift */,
-				82464CF327F348AD00123A2C /* ViewController.swift */,
 				82464CF527F348AD00123A2C /* Main.storyboard */,
 				82464CF827F348AF00123A2C /* Assets.xcassets */,
 				82464CFA27F348AF00123A2C /* LaunchScreen.storyboard */,
 				82464CFD27F348AF00123A2C /* Info.plist */,
 			);
 			path = PhotoAndSelfie;
+			sourceTree = "<group>";
+		};
+		82464D0327F34CDA00123A2C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				82464D0427F34CF500123A2C /* ParentViewController.swift */,
+				82464D0627F34D0500123A2C /* PhotoViewController.swift */,
+				82464D0827F34D1200123A2C /* SelfieViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82464CF427F348AD00123A2C /* ViewController.swift in Sources */,
 				82464CF027F348AD00123A2C /* AppDelegate.swift in Sources */,
-				82464CF227F348AD00123A2C /* SceneDelegate.swift in Sources */,
+				82464D0727F34D0500123A2C /* PhotoViewController.swift in Sources */,
+				82464D0927F34D1200123A2C /* SelfieViewController.swift in Sources */,
+				82464D0527F34CF500123A2C /* ParentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N8DFP3VMU7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoAndSelfie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -299,7 +312,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = appwork.PhotoAndSelfie;
+				PRODUCT_BUNDLE_IDENTIFIER = appwork.PhotoAndSelfie.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -314,6 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N8DFP3VMU7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoAndSelfie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -326,7 +340,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = appwork.PhotoAndSelfie;
+				PRODUCT_BUNDLE_IDENTIFIER = appwork.PhotoAndSelfie.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
