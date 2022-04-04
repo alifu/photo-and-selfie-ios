@@ -16,6 +16,9 @@ final class ParentViewController: UIViewController {
     @IBOutlet private weak var photoButton: UIButton!
     @IBOutlet private weak var selfieButton: UIButton!
     
+    var circularProgressBarView: CircularProgressBarView!
+        var circularViewDuration: TimeInterval = 2
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -23,6 +26,7 @@ final class ParentViewController: UIViewController {
         
         photoButton.addTarget(self, action: #selector(navigateToPhoto), for: .touchUpInside)
         selfieButton.addTarget(self, action: #selector(navigateToSelfie), for: .touchUpInside)
+        setUpCircularProgressBarView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,15 +48,34 @@ final class ParentViewController: UIViewController {
     @objc
     private func navigateToSelfie() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let photo = storyboard.instantiateViewController(withIdentifier: "SelfieViewController") as? SelfieViewController {
-            self.navigationController?.pushViewController(photo, animated: true)
+        if let selfie = storyboard.instantiateViewController(withIdentifier: "SelfieViewController") as? SelfieViewController {
+            selfie.delegate = self
+            self.navigationController?.pushViewController(selfie, animated: true)
         }
     }
+    
+    func setUpCircularProgressBarView() {
+            // set view
+            circularProgressBarView = CircularProgressBarView(frame: .zero)
+            // align to the center of the screen
+            circularProgressBarView.center = view.center
+            // call the animation with circularViewDuration
+            circularProgressBarView.progressAnimation(duration: circularViewDuration)
+            // add this view to the view controller
+        self.view.addSubview(circularProgressBarView)
+        }
 }
 
 extension ParentViewController: PhotoViewControllerDelegate {
     
     func grabPhoto(image: UIImage?) {
         photomImageView.image = image
+    }
+}
+
+extension ParentViewController: SelfieViewControllerDelegate {
+    
+    func grabSelfie(image: UIImage?) {
+        selfiImageView.image = image
     }
 }

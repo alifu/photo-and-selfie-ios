@@ -58,11 +58,7 @@ final class PhotoViewController: UIViewController {
         configLivePreview()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        captureSession.stopRunning()
-    }
+    
     
     // MARK: - Setup Camera
     
@@ -140,8 +136,8 @@ final class PhotoViewController: UIViewController {
         let circlePath = UIBezierPath(roundedRect: holeView, cornerRadius: 20)
         finalPath.append(circlePath.reversing())
         circleLayer.path = finalPath.cgPath
-        circleLayer.borderColor = UIColor.white.withAlphaComponent(1).cgColor
-        circleLayer.borderWidth = 1
+        circleLayer.borderColor = UIColor.red.cgColor
+        circleLayer.borderWidth = 2
         maskLayer.addSublayer(circleLayer)
         sampleMask.layer.mask = maskLayer
     }

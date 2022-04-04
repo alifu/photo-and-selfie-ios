@@ -156,9 +156,33 @@
                     <view key="view" contentMode="scaleToFill" id="LlT-4J-eVl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRr-LB-Img">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shh-Mq-V1B">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TyF-4L-iOv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TyF-4L-iOv" firstAttribute="bottom" secondItem="ZRr-LB-Img" secondAttribute="bottom" id="I6U-M9-EOf"/>
+                            <constraint firstItem="ZRr-LB-Img" firstAttribute="top" secondItem="TyF-4L-iOv" secondAttribute="top" id="IbL-Lf-fZ1"/>
+                            <constraint firstItem="TyF-4L-iOv" firstAttribute="trailing" secondItem="Shh-Mq-V1B" secondAttribute="trailing" id="Pf5-wC-BIl"/>
+                            <constraint firstItem="Shh-Mq-V1B" firstAttribute="top" secondItem="TyF-4L-iOv" secondAttribute="top" id="ZAo-uD-wmQ"/>
+                            <constraint firstItem="ZRr-LB-Img" firstAttribute="leading" secondItem="TyF-4L-iOv" secondAttribute="leading" id="fne-9c-IDN"/>
+                            <constraint firstItem="TyF-4L-iOv" firstAttribute="bottom" secondItem="Shh-Mq-V1B" secondAttribute="bottom" id="i3r-f8-QCY"/>
+                            <constraint firstItem="TyF-4L-iOv" firstAttribute="trailing" secondItem="ZRr-LB-Img" secondAttribute="trailing" id="jOM-Eu-9ue"/>
+                            <constraint firstItem="Shh-Mq-V1B" firstAttribute="leading" secondItem="TyF-4L-iOv" secondAttribute="leading" id="rOQ-m1-eLb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="guideView" destination="Shh-Mq-V1B" id="2aw-wf-9Fb"/>
+                        <outlet property="previewView" destination="ZRr-LB-Img" id="OLb-fv-eTC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44u-fs-9Gb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
