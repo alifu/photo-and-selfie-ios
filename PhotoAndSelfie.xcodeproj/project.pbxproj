@@ -15,6 +15,7 @@
 		82464D0727F34D0500123A2C /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82464D0627F34D0500123A2C /* PhotoViewController.swift */; };
 		82464D0927F34D1200123A2C /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82464D0827F34D1200123A2C /* SelfieViewController.swift */; };
 		8285209427FA9C0A00E9AD32 /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8285209327FA9C0A00E9AD32 /* CircularProgressBarView.swift */; };
+		82BFA91727FCACE600DBB39E /* CornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BFA91627FCACE600DBB39E /* CornerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		82464D0627F34D0500123A2C /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		82464D0827F34D1200123A2C /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
 		8285209327FA9C0A00E9AD32 /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		82BFA91627FCACE600DBB39E /* CornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				82464CFA27F348AF00123A2C /* LaunchScreen.storyboard */,
 				82464CFD27F348AF00123A2C /* Info.plist */,
 				8285209327FA9C0A00E9AD32 /* CircularProgressBarView.swift */,
+				82BFA91627FCACE600DBB39E /* CornerView.swift */,
 			);
 			path = PhotoAndSelfie;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82464CF027F348AD00123A2C /* AppDelegate.swift in Sources */,
+				82BFA91727FCACE600DBB39E /* CornerView.swift in Sources */,
 				82464D0727F34D0500123A2C /* PhotoViewController.swift in Sources */,
 				82464D0927F34D1200123A2C /* SelfieViewController.swift in Sources */,
 				82464D0527F34CF500123A2C /* ParentViewController.swift in Sources */,

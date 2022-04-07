@@ -41,7 +41,7 @@ class SelfieViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpCircularProgressBarView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +57,7 @@ class SelfieViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             captureSession.addOutput(photoOutput)
         }
         configGuideView()
+        setUpCircularProgressBarView()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -156,7 +157,7 @@ class SelfieViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         holeView = CGRect(x: sampleMask.center.x - 150, y: sampleMask.center.y - 150, width: 300, height: 300)
         
         finalPath.append(circlePath.reversing())
-        circleCGPath = finalPath.cgPath
+        circleCGPath = circlePath.cgPath
         circleLayer.path = finalPath.cgPath
         circleLayer.borderColor = UIColor.white.withAlphaComponent(1).cgColor
         circleLayer.borderWidth = 1
@@ -199,6 +200,24 @@ extension SelfieViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
             print(error.localizedDescription)
         }
     }
+    
+    private func drawEye(_ eye: VNFaceLandmarkRegion2D, screenBoundingBox: CGRect) -> CAShapeLayer {
+            let eyePath = CGMutablePath()
+            let eyePathPoints = eye.normalizedPoints
+                .map({ eyePoint in
+                    CGPoint(
+                        x: eyePoint.y * screenBoundingBox.height + screenBoundingBox.origin.x,
+                        y: eyePoint.x * screenBoundingBox.width + screenBoundingBox.origin.y)
+                })
+            eyePath.addLines(between: eyePathPoints)
+            eyePath.closeSubpath()
+            let eyeDrawing = CAShapeLayer()
+            eyeDrawing.path = eyePath
+            eyeDrawing.fillColor = UIColor.clear.cgColor
+            eyeDrawing.strokeColor = UIColor.green.cgColor
+            
+            return eyeDrawing
+        }
     
     private func handleFaceDetectionObservations(observations: [VNFaceObservation]) {
         if !processingImage {

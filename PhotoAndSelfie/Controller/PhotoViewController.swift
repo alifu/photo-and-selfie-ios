@@ -43,7 +43,6 @@ final class PhotoViewController: UIViewController {
         lightButton.addTarget(self, action: #selector(lightAction), for: .touchUpInside)
         captureButton.addTarget(self, action: #selector(takePhotoAction), for: .touchUpInside)
         captureButton.layer.cornerRadius = 25
-        configGuideView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,8 +53,8 @@ final class PhotoViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        configLivePreview()
+        configGuideView()
+//        configLivePreview()
     }
     
     
@@ -124,7 +123,7 @@ final class PhotoViewController: UIViewController {
     
     private func configGuideView() {
         let sampleMask = UIView()
-        sampleMask.frame = self.view.frame
+        sampleMask.frame = guideView.bounds
         sampleMask.backgroundColor =  UIColor.black.withAlphaComponent(0.6)
         guideView.addSubview(sampleMask)
         let maskLayer = CALayer()
@@ -133,6 +132,9 @@ final class PhotoViewController: UIViewController {
         circleLayer.frame = CGRect(x: 0, y: 0, width: sampleMask.frame.size.width,height: sampleMask.frame.size.height)
         let finalPath = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: sampleMask.frame.size.width, height: sampleMask.frame.size.height), cornerRadius: 0)
         holeView = CGRect(x: sampleMask.center.x - 150, y: sampleMask.center.y - 300, width: 300, height: 200)
+        let cornerViewCode = CornerView(frame: holeView)
+        guideView.addSubview(cornerViewCode)
+        cornerViewCode.lineWidth = 5
         let circlePath = UIBezierPath(roundedRect: holeView, cornerRadius: 20)
         finalPath.append(circlePath.reversing())
         circleLayer.path = finalPath.cgPath
